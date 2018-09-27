@@ -1,0 +1,23 @@
+{
+  "name": "lottie-node",
+  "version": "0.1.0",
+  "description": "Export lottie animations in node.js",
+  "author": "Albin Larsson",
+  "license": "MIT",
+  "repository": "git+https://github.com/friday/lottie-node.git",
+  "main": "index.js",
+  "keywords": [
+    "lottie",
+    "node",
+    "animations",
+    "bodymovin",
+    "render",
+    "canvas",
+    "png"
+  ],
+  "peerDependencies": {
+    "canvas": ">=1.0.0",
+    "jsdom": ">=11.0.0",
+    "lottie-web": ">=5.0.0"
+  }
+}
