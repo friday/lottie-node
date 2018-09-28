@@ -1,5 +1,6 @@
 examples
 logs
+.editorconfig
 *.log
 *.mp4
 *.png
