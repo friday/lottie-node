@@ -2,7 +2,7 @@
 
 const fs = require('fs');
 const Canvas = require('canvas');
-const lottie = require('lottie-node')();
+const lottie = require('lottie-node');
 const {spawn} = require('child_process');
 
 async function renderAnimation({data, assetsPath, path, width, height, backgroundColor, codec, crf = 20, preset = 'fast', fps = 30}) {

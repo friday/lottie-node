@@ -17,7 +17,7 @@ const createContent = `CVImageElement.prototype.createContent = function() {
   });
 }`;
 
-module.exports = (lottiePath = require.resolve('lottie-web/build/player/lottie.js')) => (animationData, rendererSettings, options = {}) => {
+const factory = (lottiePath = require.resolve('lottie-web/build/player/lottie.js')) => (animationData, rendererSettings, options = {}) => {
   const {window} = new JSDOM('', {pretendToBeVisual: true});
   const {document, navigator} = window;
   const {Image} = Canvas;
@@ -51,3 +51,6 @@ module.exports = (lottiePath = require.resolve('lottie-web/build/player/lottie.j
   }
   return window.lottie.loadAnimation({...options, animationData, renderer: 'canvas', rendererSettings});
 };
+
+// Export with predefined lottiePath, but add factory method to override
+module.exports = Object.assign(factory(), {factory});

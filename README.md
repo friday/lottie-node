@@ -20,21 +20,25 @@ This could take some time since node-canvas has a lot to build when you do this.
 
 ## Usage
 
-`lottie-node` is a commonjs module. If you're using it with lottie-web from npm as recommended, you import it like you normally would, but with an extra function call. The additional function call is there in case you needed to patch it, and as a result have a custom Lottie path (there have been very valid cases to do this in the past).
-
 ```js
-const loadAnimation = require('lottie-node')();
+const lottieNode = require('lottie-node');
 ```
 
 or
 
 ```js
-import lottieLoader from 'lottie-node';
-
-const loadAnimation = lottieLoader();
+import lottieNode from 'lottie-node';
 ```
 
-`loadAnimation` (as created above) is a similar to lottie-web's `loadAnimation`, but the arguments are simplified since most of the Lottie options are irrelevant for rendering on the server. It takes three arguments:
+If you need to specify the path to Lottie (if you have altered it for example) you can do it this way:
+
+```js
+const lottieNode = require('lottie-node').factory('/path/to/lottie.js');
+```
+
+`lottieNode` (as created above) is a similar to lottie-web's `loadAnimation`, but the arguments are simplified since most of the Lottie options aren't relevant for rendering on the server.
+
+It takes three arguments:
 
 * `data`: Same as lottie-web. Can also be a path to the json file
 * `rendererSettings`: See [wiki](https://github.com/airbnb/lottie-web/wiki/Renderer-Settings). You can also pass the canvas directly instead of this argument. This is recommended unless you want to set `preserveAspectRatio`)
