@@ -6,6 +6,9 @@
   "license": "MIT",
   "repository": "git+https://github.com/friday/lottie-node.git",
   "main": "index.js",
+  "engines": {
+    "node": ">=8.3.0"
+  },
   "keywords": [
     "lottie",
     "node",
