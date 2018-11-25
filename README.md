@@ -2,21 +2,17 @@
 
 lottie-node is an API for runnig [Lottie](https://github.com/airbnb/lottie-web/) with the canvas renderer in Node.js, with the help of [node-canvas](https://github.com/Automattic/node-canvas) and [jsdom](https://github.com/jsdom/jsdom). This is intended for rendering Lottie animations to images or video. Using Node for rendering is advantageous over something like PhantomJS, since it's faster and allows you to export images with opacity. It doesn't have to record in real-time, and you won't have a problem with frame-skipping.
 
-## Pre-installation
-
-Before you can install the dependencies, install the [libraries needed for node-canvas](https://github.com/Automattic/node-canvas/tree/v1.x#installation).
-
-If you want to render to video you also need `ffmpeg`. Use a package manager or the official [compilation guide](https://trac.ffmpeg.org/wiki/CompilationGuide) for how to compile it on your platform. Package managers tends to ship older versions and can't be customized, but they are significantly easier to install.
-
 ## Installation
 
-After the [pre-installation](#pre-installation)-step, install lottie-node and the dependencies (node-canvas, jsdom and lottie).
+Install lottie-node and the peer-dependencies:
 
 `npm i canvas jsdom lottie-web lottie-node`
 or
 `yarn add canvas jsdom lottie-web lottie-node`
 
-This could take some time since node-canvas has a lot to build when you do this.
+Node-Canvas will most likely download a pre-built binary release for your cpu architecture rather than building it. If this isn't the case for you, you should install the [libraries](https://github.com/Automattic/node-canvas#compiling) needed for the build.
+
+If you want to render to video you also need ffmpeg. See [Rendering to video](#rendering-to-video)
 
 ## Usage
 
@@ -51,7 +47,8 @@ To render to a file, call `goToAndStop()` on the animation object. This renders 
 
 The [examples-directory](https://github.com/friday/lottie-node/blob/master/examples) contains two working examples which renders an animation from [lottie-react-native](https://github.com/react-community/lottie-react-native) to PNG and full video.
 
-You need to follow the instruction in [pre-installation](#pre-installation) before running them, then install the dependencies and run the examples in node:
+
+Make sure you have ffmpeg (see [Rendering to video](#rendering-to-video) below). Then run the examples in node:
 
 ```sh
 cd examples
@@ -59,6 +56,10 @@ yarn # (or 'npm i')
 node render-png.js
 node render-mp4.js # This takes a little while (~10s on my laptop)
 ```
+
+## Rendering to video
+
+If you want to render to video you need `ffmpeg`. Use a package manager or the official [compilation guide](https://trac.ffmpeg.org/wiki/CompilationGuide) for how to compile it on your platform. Package managers tends to ship older versions and can't be customized, but they are significantly easier to install.
 
 ## How it works
 

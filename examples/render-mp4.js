@@ -1,12 +1,12 @@
 // Render each frame of the animation to a video (additionally requires ffmpeg)
 
 const fs = require('fs');
-const Canvas = require('canvas');
+const {createCanvas} = require('canvas');
 const lottie = require('lottie-node');
 const {spawn} = require('child_process');
 
 async function renderAnimation({data, assetsPath, path, width, height, backgroundColor, codec, crf = 20, preset = 'fast', fps = 30}) {
-  const canvas = new Canvas(width, height);
+  const canvas = createCanvas(width, height);
   const animation = lottie(data, canvas, {assetsPath});
   const frameCount = animation.getDuration(true);
 

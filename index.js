@@ -1,7 +1,7 @@
 const path = require('path');
 const fs = require('fs');
 const {JSDOM} = require('jsdom');
-const Canvas = require('canvas');
+const {Canvas} = require('canvas');
 
 // This is probably not the best way to handle Lottie image loading in Node.
 // JSDOM's wrapped `Image` object should work, but attempts resulted in "Image given has not completed loading"

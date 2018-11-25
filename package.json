@@ -19,8 +19,8 @@
     "png"
   ],
   "peerDependencies": {
-    "canvas": ">=1.0.0",
-    "jsdom": ">=11.0.0",
+    "canvas": ">=2.0.0",
+    "jsdom": ">=13.0.0",
     "lottie-web": ">=5.0.0"
   }
 }
