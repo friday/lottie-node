@@ -69,4 +69,4 @@ This type of solution is risky and can break with the upgrade of any of the peer
 
 If you are having trouble, try the [examples](#examples). They have their own package.json and yarn lockfile, so they won't use potentially incompatible peer-dependencies in the future.
 
-SVG and HTML are not supported and can not be supported in Node.js as far as I know of. Even if it would be possible, these renderers aren't suited for exporting independent images or video files, so it's outside the scope of this project.
+Lottie's HTML renderer cannot be supported using jsdom. The SVG renderer *may* be possible to support by converting SVG to canvas. See [issue 7](https://github.com/friday/lottie-node/issues/7) if you want to help out (I'm not going to add this).
