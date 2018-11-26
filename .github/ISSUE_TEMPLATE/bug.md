@@ -6,20 +6,20 @@ about: Report an issue or unexpected behavior with lottie-node
 <!--
 Before creating the issue, please make sure that...
 
-* You aren't getting any errors in your own code, causing the problem.
-* You are using the latest version of lottie-node, lottie, node-canvas and jsdom.
+* You haven't got any errors in your own code, causing the problem.
 * There isn't already an open issue for your problem.
 * The issue is only happening for lottie-node, not lottie (web).
 * You are following the documentated [usage](https://github.com/friday/lottie-node#usage) correctly.
+* You are using the latest version of lottie-node, lottie, node-canvas and jsdom.
 
 If you have multiple unrelated problems, create separate issues rather than combining them into one.
 
-Note that leaving sections blank or being vague will make it difficult for us to troubleshoot and we may close the issue.
+Note that leaving sections blank or being vague will make it difficult to understand and help you.
 -->
 
-### Expected behaviour
+### Expected behavior
 
-### Actual behaviour
+### Actual behavior
 
 ### Steps to reproduce
 

@@ -1,6 +1,6 @@
 ---
 name: Question
-about: For questions that aren't issues.
+about: For questions that aren't about bugs, improvements or features.
 ---
 
 <!--
