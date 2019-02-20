@@ -45,7 +45,7 @@ To render to a file, call `goToAndStop()` on the animation object. This renders 
 
 ## Examples
 
-The [examples-directory](https://github.com/friday/lottie-node/blob/master/examples) contains two working examples which renders an animation from [lottie-react-native](https://github.com/react-community/lottie-react-native) to PNG and full video.
+The [examples](https://github.com/friday/lottie-node/blob/master/examples) render an animation from [lottie-react-native](https://github.com/react-community/lottie-react-native) to PNG or a full video. It's a good place to start.
 
 
 Make sure you have ffmpeg (see [Rendering to video](#rendering-to-video) below). Then run the examples in node:
@@ -63,10 +63,8 @@ If you want to render to video you need `ffmpeg`. Use a package manager or the o
 
 ## How it works
 
-Lottie wasn't written to support rendering in Node.js. Node-canvas and jsdom has [some](https://github.com/Automattic/node-canvas/issues/487) [quirks](https://github.com/jsdom/jsdom/issues/2067) when used together, and for some reason Lottie occasionally frame skips when running scripts in the [recommended jsdom way](https://github.com/jsdom/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global#running-code-inside-the-jsdom-context). Because of these challenges, while writing lottie-node I had to resort to some hacky methods that are generally discouraged. Rather than importing lottie-web as a module, it's loaded as a string, patched to work server-side, and then run using [eval](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval).
+Lottie wasn't written to support rendering in Node.js. Node-canvas and jsdom has [some](https://github.com/Automattic/node-canvas/issues/487) [quirks](https://github.com/jsdom/jsdom/issues/2067) when used together, and for some reason Lottie skipped frames for some animations when I tried running scripts the [recommended jsdom way](https://github.com/jsdom/jsdom/wiki/Don't-stuff-jsdom-globals-onto-the-Node-global#running-code-inside-the-jsdom-context). Because of these challenges, while writing lottie-node I had to resort to some hacky methods that are generally discouraged. Rather than importing lottie-web as a module, it's loaded as a string, patched to work server-side, and then run using [eval](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval).
 
-This type of solution is risky and can break with the upgrade of any of the peer dependencies, but at least the module is isolated and doesn't add dom-shims to the global scope.
-
-If you are having trouble, try the [examples](#examples). They have their own package.json and yarn lockfile, so they won't use potentially incompatible peer-dependencies in the future.
+This type of solution is risky and can break with the upgrade of any of the peer dependencies, but at least the module is isolated and doesn't add dom-shims to the global scope. The [examples](#examples) have their own package.json and yarn lockfile, so in case the peer-dependencies updates and breaks lottie-node, they should still work.
 
 Lottie's HTML renderer cannot be supported using jsdom. The SVG renderer *may* be possible to support by converting SVG to canvas. See [issue 7](https://github.com/friday/lottie-node/issues/7) if you want to help out (I'm not going to add this).
