@@ -68,3 +68,6 @@ Lottie wasn't written to support rendering in Node.js. Node-canvas and jsdom has
 This type of solution is risky and can break with the upgrade of any of the peer dependencies, but at least the module is isolated and doesn't add dom-shims to the global scope. The [examples](#examples) have their own package.json and yarn lockfile, so in case the peer-dependencies updates and breaks lottie-node, they should still work.
 
 Lottie's HTML renderer cannot be supported using jsdom. The SVG renderer *may* be possible to support by converting SVG to canvas. See [issue 7](https://github.com/friday/lottie-node/issues/7) if you want to help out (I'm not going to add this).
+
+## Caveats and known issues
+* [#8](https://github.com/friday/lottie-node/issues/8) lottie-node is not working with some json files although they work in lottie-web
