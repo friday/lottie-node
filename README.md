@@ -71,3 +71,6 @@ Lottie's HTML renderer cannot be supported using jsdom. The SVG renderer *may* b
 
 ## Caveats and known issues
 * [#8](https://github.com/friday/lottie-node/issues/8) lottie-node is not working with some json files although they work in lottie-web
+
+## Alternatives
+[puppeteer-lottie](https://github.com/transitive-bullshit/puppeteer-lottie) (I haven't tried it but since it doesn't use Node and node-canvas it doesn't have the same issues as lottie-node and supports SVG.
