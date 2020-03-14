@@ -1,3 +1,7 @@
+### Important
+[puppeteer-lottie](https://github.com/transitive-bullshit/puppeteer-lottie) is doing the exact same thing as lottie-node, except via pupeteer (Chrome headless) instead of Node-canvas. This is slower, but fully compatible with lottie-web. It also has a neater API for rendering to video which you can use without knowledge of FFMPEG. The author obverall provided a lot more work than I did for this library (~50 lines of code) and puppeteer-lottie should be a better option for almost everyone than lottie-node.
+
+
 # lottie-node
 
 lottie-node is an API for runnig [Lottie](https://github.com/airbnb/lottie-web/) with the canvas renderer in Node.js, with the help of [node-canvas](https://github.com/Automattic/node-canvas) and [jsdom](https://github.com/jsdom/jsdom). This is intended for rendering Lottie animations to images or video. Using Node for rendering is advantageous over something like PhantomJS, since it's faster and allows you to export images with opacity. It doesn't have to record in real-time, and you won't have a problem with frame-skipping.
@@ -71,6 +75,3 @@ Lottie's HTML renderer cannot be supported using jsdom. The SVG renderer *may* b
 
 ## Caveats and known issues
 * [#8](https://github.com/friday/lottie-node/issues/8) lottie-node is not working with some json files although they work in lottie-web
-
-## Alternatives
-[puppeteer-lottie](https://github.com/transitive-bullshit/puppeteer-lottie) (I haven't tried it, but since it doesn't use node-canvas it doesn't have the same issues as lottie-node and supports SVG.
