@@ -1,5 +1,5 @@
 ### Important
-[puppeteer-lottie](https://github.com/transitive-bullshit/puppeteer-lottie) is doing the exact same thing as lottie-node, except via pupeteer (Chrome headless) instead of Node-canvas. This is slower, but fully compatible with lottie-web. It also has a neater API for rendering to video which you can use without knowledge of FFMPEG. The author obverall provided a lot more work than I did for this library (~50 lines of code) and puppeteer-lottie should be a better option for almost everyone than lottie-node.
+[puppeteer-lottie](https://github.com/transitive-bullshit/puppeteer-lottie) is doing the exact same thing as lottie-node, except via pupeteer (Chrome headless) instead of Node-canvas. This is slower, but fully compatible with lottie-web. It also has a neater API for rendering to video which you can use without knowledge of FFMPEG. The author overall provided a lot more work than I did for this library (~50 lines of code) and puppeteer-lottie should be a better option for almost everyone than lottie-node.
 
 
 # lottie-node
