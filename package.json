@@ -1,6 +1,6 @@
 {
   "name": "lottie-node",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Export lottie animations in node.js",
   "author": "Albin Larsson",
   "license": "MIT",
@@ -19,8 +19,8 @@
     "png"
   ],
   "peerDependencies": {
-    "canvas": ">=2.0.0",
-    "jsdom": ">=13.0.0",
-    "lottie-web": ">=5.0.0"
+    "canvas": "^2.7.0",
+    "jsdom": "^16.5.1",
+    "lottie-web": "^5.7.6"
   }
 }
