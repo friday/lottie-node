@@ -17,8 +17,7 @@ const createContent = `
       ob.img = image;
       this._imageLoaded();
     }).catch((err) => {
-      ob.img = proxyImage;
-      this._imageLoaded();
+      throw error;
     });
 
     return ob;

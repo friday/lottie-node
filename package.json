@@ -1,13 +1,15 @@
 {
-  "name": "lottie-node",
-  "version": "1.1.0",
+  "name": "@openreel/lottie-node",
+  "version": "1.1.1",
   "description": "Export lottie animations in node.js",
   "author": "Albin Larsson",
   "license": "MIT",
-  "repository": "git+https://github.com/friday/lottie-node.git",
   "main": "index.js",
   "engines": {
     "node": ">=8.3.0"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com"
   },
   "keywords": [
     "lottie",
