@@ -16,7 +16,7 @@ const createContent = `
     require('canvas').loadImage(path).then((image) => {
       ob.img = image;
       this._imageLoaded();
-    }).catch((err) => {
+    }).catch((error) => {
       throw error;
     });
 
