@@ -1,20 +1,20 @@
 const path = require("path");
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
-const { Canvas } = require("canvas");
+const { Canvas, loadImage } = require("canvas");
 
 // This is probably not the best way to handle Lottie image loading in Node.
 // JSDOM's wrapped `Image` object should work, but attempts resulted in "Image given has not completed loading"
-const createContent = `CVImageElement.prototype.createContent = function() {
-  var assetPath = this.globalData.getAssetsPath(this.assetData);
-  var img = this.img;
-  img.src = assetPath;
-  fs.readFile(assetPath, (err, data) => {
-    if (!err) {
-      img.src = data;
-    }
-    this[err ? 'imageFailed' : 'imageLoaded']();
+const createImgData = `function createImgData(assetData) {
+  var path = getAssetsPath(assetData, this.assetsPath, this.path);
+  var ob = { assetData };
+  
+  loadImage(path).then(image => {
+    ob.img = image;
+    this._imageLoaded();
   });
+
+  return ob;
 }`;
 
 const factory = (
@@ -36,8 +36,8 @@ const factory = (
   const src = fs.readFileSync(path.resolve(__dirname, lottiePath), "utf8");
   // Over-specify createContent (add a Node.js-compatible variant into the code after the first)
   const patchedSrc = src.replace(
-    "CVImageElement.prototype.destroy",
-    `${createContent}; CVImageElement.prototype.destroy`
+    "function ImagePreloaderFactory() {",
+    `${createImgData}; function ImagePreloaderFactory() {`
   );
 
   // "Shadow" the Node.js module, so lottie won't reach it

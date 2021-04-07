@@ -7,7 +7,7 @@
   "repository": "git+https://github.com/friday/lottie-node.git",
   "main": "index.js",
   "engines": {
-    "node": ">=8.3.0"
+    "node": ">=10.0.0"
   },
   "keywords": [
     "lottie",
@@ -19,8 +19,8 @@
     "png"
   ],
   "peerDependencies": {
-    "canvas": ">=2.0.0",
-    "jsdom": ">=13.0.0",
-    "lottie-web": ">=5.0.0"
+    "canvas": ">=2.7.0",
+    "jsdom": ">=16.5.2",
+    "lottie-web": ">=5.7.8"
   }
 }
