@@ -26,6 +26,7 @@ Note that leaving sections blank or being vague will make it difficult to unders
 ### Environment
 
 - Versions:
+
   - lottie-node:
   - lottie-web:
   - node-canvas:

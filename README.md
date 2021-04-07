@@ -21,36 +21,35 @@ If you want to render to video you also need ffmpeg. See [Rendering to video](#r
 ## Usage
 
 ```js
-const lottieNode = require('lottie-node');
+const lottieNode = require("lottie-node");
 ```
 
 or
 
 ```js
-import lottieNode from 'lottie-node';
+import lottieNode from "lottie-node";
 ```
 
 If you need to specify the path to Lottie (if you have altered it for example) you can do it this way:
 
 ```js
-const lottieNode = require('lottie-node').factory('/path/to/lottie.js');
+const lottieNode = require("lottie-node").factory("/path/to/lottie.js");
 ```
 
 `lottieNode` (as created above) is a similar to lottie-web's `loadAnimation`, but the arguments are simplified since most of the Lottie options aren't relevant for rendering on the server.
 
 It takes three arguments:
 
-* `data`: Same as lottie-web. Can also be a path to the json file
-* `rendererSettings`: See [wiki](https://github.com/airbnb/lottie-web/wiki/Renderer-Settings). You can also pass the canvas directly instead of this argument. This is recommended unless you want to set `preserveAspectRatio`)
-* `options`: Any **other** options you want to pass to 
-Lottie's [loadAnimation()](https://github.com/airbnb/lottie-web/wiki/loadAnimation-options). Apart from `assetsPath`, most of these doesn't make sense for rendering animations on the server.
+- `data`: Same as lottie-web. Can also be a path to the json file
+- `rendererSettings`: See [wiki](https://github.com/airbnb/lottie-web/wiki/Renderer-Settings). You can also pass the canvas directly instead of this argument. This is recommended unless you want to set `preserveAspectRatio`)
+- `options`: Any **other** options you want to pass to
+  Lottie's [loadAnimation()](https://github.com/airbnb/lottie-web/wiki/loadAnimation-options). Apart from `assetsPath`, most of these doesn't make sense for rendering animations on the server.
 
 To render to a file, call `goToAndStop()` on the animation object. This renders a frame which is ready on the next "tick". use [`canvas.toBuffer()`](https://github.com/Automattic/node-canvas#canvastobuffer). Save the buffer directly to a file or piped them to ffmpeg to create a video (see [Examples](#examples)).
 
 ## Examples
 
 The [examples](https://github.com/friday/lottie-node/blob/master/examples) render an animation from [lottie-react-native](https://github.com/react-community/lottie-react-native) to PNG or a full video. It's a good place to start.
-
 
 Make sure you have ffmpeg (see [Rendering to video](#rendering-to-video) below). Then run the examples in node:
 
@@ -71,7 +70,11 @@ Lottie wasn't written to support rendering in Node.js. Node-canvas and jsdom has
 
 This type of solution is risky and can break with the upgrade of any of the peer dependencies, but at least the module is isolated and doesn't add dom-shims to the global scope. The [examples](#examples) have their own package.json and yarn lockfile, so in case the peer-dependencies updates and breaks lottie-node, they should still work.
 
-Lottie's HTML renderer cannot be supported using jsdom. The SVG renderer *may* be possible to support by converting SVG to canvas. See [issue 7](https://github.com/friday/lottie-node/issues/7) if you want to help out (I'm not going to add this).
+Lottie's HTML renderer cannot be supported using jsdom. The SVG renderer _may_ be possible to support by converting SVG to canvas. See [issue 7](https://github.com/friday/lottie-node/issues/7) if you want to help out (I'm not going to add this).
 
 ## Caveats and known issues
-* [#8](https://github.com/friday/lottie-node/issues/8) lottie-node is not working with some json files although they work in lottie-web
+- [#8](https://github.com/friday/lottie-node/issues/8) lottie-node is not working with some json files although they work in lottie-web
+
+## Alternatives
+
+[puppeteer-lottie](https://github.com/transitive-bullshit/puppeteer-lottie) (I haven't tried it, but since it doesn't use node-canvas it doesn't have the same issues as lottie-node and supports SVG.
