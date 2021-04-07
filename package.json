@@ -1,6 +1,6 @@
 {
   "name": "lottie-node",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Export lottie animations in node.js",
   "author": "Albin Larsson",
   "license": "MIT",
