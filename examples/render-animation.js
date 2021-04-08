@@ -1,17 +1,15 @@
-// Render each frame of the animation to a video (additionally requires ffmpeg)
-
-const fs = require("fs");
 const { createCanvas } = require("canvas");
 const lottie = require("lottie-node");
 const { spawn } = require("child_process");
 
-async function renderAnimation({
+// Render each frame of the animation to a video (additionally requires ffmpeg)
+module.exports = async function renderAnimation({
   data,
   assetsPath,
   path,
   width,
   height,
-  backgroundColor,
+  backgroundColor = "white",
   codec,
   crf = 20,
   preset = "fast",
@@ -84,11 +82,3 @@ async function renderAnimation({
     });
   })();
 }
-
-renderAnimation({
-  data: `${__dirname}/LottieLogo2.json`,
-  backgroundColor: "white",
-  width: 360,
-  height: 640,
-  path: `${__dirname}/output.mp4`,
-});

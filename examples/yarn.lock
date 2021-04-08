@@ -548,7 +548,7 @@ lodash@^4.17.19, lodash@^4.7.0:
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 "lottie-node@file:..":
-  version "1.0.0"
+  version "2.0.0"
 
 lottie-web@^5.7.8:
   version "5.7.8"

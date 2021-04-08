@@ -56,8 +56,10 @@ Make sure you have ffmpeg (see [Rendering to video](#rendering-to-video) below).
 ```sh
 cd examples
 yarn # (or 'npm i')
-node render-png.js
-node render-mp4.js # This takes a little while (~10s on my laptop)
+node render-snapshot.js lottie-logo2.json logo.png
+node render-video.js lottie-logo2.json logo.mp4 # Video render takes a little longer
+# https://lottiefiles.com/34070-corgi-with-blue-balloon by Jonhson Subianto (has embedded images)
+node render-video.js 34070-corgi-with-blue-balloon.json corgi.mp4
 ```
 
 ## Rendering to video
