@@ -61,6 +61,8 @@ node render-video.js lottie-logo2.json logo.mp4 # Video render takes a little lo
 # Downloaded from lottiefiles.com (has embedded or linked images)
 node render-video.js 34070-corgi-with-blue-balloon.json corgi.mp4 # Corgi with blue balloon by Jonhson Subianto
 node render-video.js 28141-sate-traveling.json traveling.mp4 # Sate Traveling by Reza
+node render-video.js 18162-rotating-sun.json sun.mp4 # rotating sun by elad p
+node render-video-replacing-image.js # Same as above, but replacing the sun with a custom local image
 ```
 
 ## Rendering to video
