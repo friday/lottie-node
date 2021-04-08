@@ -4,6 +4,10 @@ const renderAnimation = require("./render-animation");
 (async () => {
   const data = JSON.parse((await readFile("18162-rotating-sun.json")).toString());
 
+  // For replacing texts (not in this example), see here:
+  // * https://github.com/airbnb/lottie-web/wiki/TextLayer.updateDocumentData
+  // * https://github.com/airbnb/lottie-web/issues/1881
+
   // Replace image of the sun with local image of a pie
   // You only need to set `p` to the image src for the example to work, but the other options may be needed for other data files
   Object.assign(data.assets[0], {
