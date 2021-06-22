@@ -6,6 +6,6 @@
     "canvas": "^2.7.0",
     "jsdom": "^16.5.2",
     "lottie-node": "file:..",
-    "lottie-web": "^5.7.8"
+    "lottie-web": "^5.7.9"
   }
 }
